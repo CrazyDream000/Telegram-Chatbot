@@ -21,7 +21,9 @@ def Generate_Respose(prompt):
     return message
 
 
-
+@bot.message_handler(content_types=['voice'])
+def voice_processing(message):
+    bot.reply_to(message, "Sorry, but I can't handle voice messages yet. I'm working on it.")
 
 @bot.message_handler(func=lambda msg: True)
 def echo_all(prompt):
